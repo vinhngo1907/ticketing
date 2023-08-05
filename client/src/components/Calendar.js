@@ -5,7 +5,7 @@ import deleteIcon from '../../assets/trash.svg'
 import { PostContext } from '../../contexts/PostContext'
 import { useContext } from 'react'
 
-const ActionButtons = ({ url, _id }) => {
+const Calendar = ({ url, _id }) => {
 	const { deletePost, findPost, setShowUpdatePostModal } = useContext(
 		PostContext
 	)
@@ -30,4 +30,4 @@ const ActionButtons = ({ url, _id }) => {
 	)
 }
 
-export default ActionButtons
+export default Calendar

@@ -1,36 +1,26 @@
-import './App.css'
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-import Landing from './components/layout/Landing'
-import Auth from './views/Auth'
-import AuthContextProvider from './contexts/AuthContext'
-import Dashboard from './views/Dashboard'
-import ProtectedRoute from './components/routing/ProtectedRoute'
-import About from './views/About'
-import PostContextProvider from './contexts/PostContext'
+import { Route, Routes, Link } from "react-router-dom"
+import AddEvent from './components/AddEvent';
+import UpdateEvent from './components/UpdateEvent';
 
 function App() {
 	return (
-		<AuthContextProvider>
-			<PostContextProvider>
-				<Router>
-					<Switch>
-						<Route exact path='/' component={Landing} />
-						<Route
-							exact
-							path='/login'
-							render={props => <Auth {...props} authRoute='login' />}
-						/>
-						<Route
-							exact
-							path='/register'
-							render={props => <Auth {...props} authRoute='register' />}
-						/>
-						<ProtectedRoute exact path='/dashboard' component={Dashboard} />
-						<ProtectedRoute exact path='/about' component={About} />
-					</Switch>
-				</Router>
-			</PostContextProvider>
-		</AuthContextProvider>
+		<>
+			<nav className="navbar navbar-light bg-light">
+
+				<div className="container-fluid align-items-center">
+					<Link className="navbar-brand ms-2" to="/">
+						<h3>Agenda</h3>
+					</Link>
+					<span className="navbar-brand mb-0 h2 "><Link className="nav-link pe-0 " to={"/events/add"}>Add Event</Link></span>
+				</div>
+
+			</nav>
+			<Routes>
+				{/* <Route path="/" exact element={<MyCalendar />} /> */}
+				<Route path="/events/add" element={<AddEvent />} />
+				<Route path="/event/:id/update" element={<UpdateEvent />} />
+			</Routes>
+		</>
 	)
 }
 
