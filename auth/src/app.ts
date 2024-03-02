@@ -13,7 +13,7 @@ app.use(cookieSession({
 }));
 
 app.all('*', async (req, res) => {
-    throw new Error("");
+    throw new NotFoundError();
 })
 
 app.use(errorHandler);
