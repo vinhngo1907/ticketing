@@ -1,21 +1,14 @@
-import Button from 'react-bootstrap/Button'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import { CustomError } from "../errors/custom-error";
 
-const About = () => {
-	return (
-		<Row className='mt-5' style={{ marginRight: 0 }}>
-			<Col className='text-center'>
-				<Button
-					variant='primary'
-					href='https://www.youtube.com/c/HenryWebDev'
-					size='lg'
-				>
-					Visit my channel for more tutorials
-				</Button>
-			</Col>
-		</Row>
-	)
+export class BadRequestError extends CustomError {
+	statusCode: number = 400;
+
+	constructor(public message: string) {
+		super(message);
+		Object.setPrototypeOf(this, BadRequestError.prototype);
+	}
+
+	serializeErrors(): { message: string; field?: string | undefined; }[] {
+		return [{ message: this.message }];
+	}
 }
-
-export default About

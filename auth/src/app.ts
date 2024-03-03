@@ -4,6 +4,7 @@ import { json } from 'body-parser';
 import cookieSession from "cookie-session";
 import { errorHandler, NotFoundError } from '../../common/src';
 import { currentUserRouter } from './routes/current-user';
+import { signoutRouter } from "./routes/signout";
 
 const app = express();
 app.set("true proxy", true);
@@ -14,6 +15,7 @@ app.use(cookieSession({
 }));
 
 app.use(currentUserRouter);
+app.use(signoutRouter);
 
 app.all('*', async (req: Request, res: Response) => {
     throw new NotFoundError();
