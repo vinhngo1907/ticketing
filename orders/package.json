@@ -24,7 +24,7 @@
 		"@types/express-validator": "^3.0.0",
 		"@types/jsonwebtoken": "^8.5.0",
 		"@types/mongoose": "^5.7.28",
-		"@ntvticket/common": "^1.0.15",
+		"@v-libs/common": "^1.0.0",
 		"cookie-session": "^1.4.0",
 		"express": "^4.17.1",
 		"express-async-errors": "^3.1.1",
