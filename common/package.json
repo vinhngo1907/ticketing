@@ -1,6 +1,6 @@
 {
-    "name": "@vtickets/common",
-    "version": "1.0.24",
+    "name": "@v-libs/common",
+    "version": "1.0.0",
     "description": "",
     "main": "./build/index.js",
     "types": "./build/index.d.ts",
@@ -8,10 +8,11 @@
         "build/**/*"
     ],
     "scripts": {
-        "clean": "if exist ./build (del /s /q ./build/*) else (exit 0)",
+        "clean": "rimraf ./build && tsc",
         "build": "npm run clean && tsc",
         "pub": "git add . && git commit -m \"Updates\" && npm version patch && npm run build && npm publish"
     },
+    "private": false,
     "keywords": [],
     "author": "",
     "license": "ISC",
