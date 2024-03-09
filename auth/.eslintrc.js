@@ -1,4 +1,4 @@
 module.exports = {
-    extends: [require.resolve('@vtickets/common')],
+    extends: [require.resolve('@ntvticket/common')],
     ignorePatterns: ['.eslintrc.js'],
 };
