@@ -3,8 +3,7 @@ import "express-async-errors";
 import { json } from 'body-parser';
 import cookieSession from "cookie-session";
 import { NotFoundError, errorHandler } from "@v-libs/common";
-// import { errorHandler, NotFoundError } from '../../common/build';
-// import { currentUserRouter } from './routes/current-user';
+import { currentUserRouter } from './routes/current-user';
 // import { signoutRouter } from "./routes/signout";
 
 const app = express();
