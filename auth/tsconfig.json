@@ -56,5 +56,9 @@
         // "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */
         /* Advanced Options */
         "forceConsistentCasingInFileNames": true /* Disallow inconsistently-cased references to the same file. */
-    }
+    },
+    "include":[
+        "src/**/*.ts", // Include your source files
+        "node_modules/@v-libs/common/build//*.d.ts" // Include declaration files from @v-libs/common
+    ],
 }
